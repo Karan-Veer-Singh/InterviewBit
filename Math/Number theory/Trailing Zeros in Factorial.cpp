@@ -1,16 +1,16 @@
-int Solution::trailingZeroes(int A)
+int Solution::trailingZeroes(int n)
 {
-	int p = 5;
 	int ans = 0;
 
-	while ( (A / p) > 0)
+	while (n)
 	{
-		ans += (A / p);
-		p *= 5;
+		n /= 5;
+		ans += n;
 	}
 
 	return ans;
 }
+
 
 
 // https://www.interviewbit.com/problems/trailing-zeros-in-factorial/
