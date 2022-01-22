@@ -1,6 +1,6 @@
 //https://www.interviewbit.com/problems/longest-common-subsequence/
 
-// TOP-DOWN (Memoizatoin)
+// TOP-DOWN (Memoization)
 // Time Complexity = O(n*m)
 // Sapce Complexity = O(n*m) + recursion stack space.
 
