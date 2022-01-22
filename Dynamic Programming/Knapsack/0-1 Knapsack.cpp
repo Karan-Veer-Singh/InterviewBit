@@ -33,3 +33,38 @@ int Solution::solve(vector<int> &A, vector<int> &B, int C)
 
     return knapsack(A, B, C, n, dp);
 }
+
+
+// Bottom-Up (Tabulation)
+// Time Complexity = O(n*C)
+// Sapce Complexity = O(n*C)
+
+int Solution::solve(vector<int> &val, vector<int> &weight, int C)
+{
+    int N = val.size();
+
+    int dp[N + 1][C + 1];
+
+    for (int i = 0; i <= N; i++)
+    {
+        for (int j = 0; j <= C; j++)
+        {
+            if (i == 0 || j == 0)
+                dp[i][j] = 0;
+
+            else if (weight[i - 1] <= j)
+            {
+                int inc = val[i - 1] + dp[i - 1][j - weight[i - 1]];
+                int exc = dp[i - 1][j];
+
+                dp[i][j] = max(inc, exc);
+            }
+            else
+            {
+                dp[i][j] = dp[i - 1][j];
+            }
+        }
+    }
+
+    return dp[N][C];
+}
