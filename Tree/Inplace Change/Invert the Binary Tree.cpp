@@ -20,5 +20,32 @@ TreeNode* Solution::invertTree(TreeNode* root)
 	return root;
 }
 
+// Iterative
+
+TreeNode* Solution::invertTree(TreeNode* root)
+{
+	if (root == NULL)
+		return NULL;
+
+	queue<TreeNode*> q;
+	q.push(root);
+
+	TreeNode *f;
+	while (!q.empty())
+	{
+		f = q.front();
+		q.pop();
+
+		swap(f->left, f->right);
+
+		if (f->left)
+			q.push(f->left);
+
+		if (f->right)
+			q.push(f->right);
+	}
+
+	return root;
+}
 
 // https://www.interviewbit.com/problems/invert-the-binary-tree/
