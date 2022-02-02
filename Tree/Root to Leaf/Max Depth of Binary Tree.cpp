@@ -18,5 +18,4 @@ int Solution::maxDepth(TreeNode* root)
 	return 1 + max(lh, rh);
 }
 
-
-// https://www.interviewbit.com/problems/max-depth-of-binary-tree/
+https://www.interviewbit.com/problems/max-depth-of-binary-tree/
